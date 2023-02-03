@@ -31,15 +31,21 @@ namespace ProyectoHeladeria
             var page6 = new MasterPageItem() { Title = "Listado Ventas", Icon = "", TargetType = typeof(ListaVenta) };
             var page7 = new MasterPageItem() { Title = "Listado Detalle Ventas", Icon = "", TargetType = typeof(ListaDetalle) };
 
+            if (idPerfil == 1)
+            {
+                menuList.Add(page1);
+                menuList.Add(page2);
+                menuList.Add(page3);
+                menuList.Add(page4);
+                menuList.Add(page5);
+                menuList.Add(page6);
+                menuList.Add(page7);
 
+            }else
+            {
+                menuList.Add(page1);
 
-            menuList.Add(page1);
-            menuList.Add(page2);
-            menuList.Add(page3);
-            menuList.Add(page4);
-            menuList.Add(page5);
-            menuList.Add(page6);
-            menuList.Add(page7);
+            }
 
 
             navigationDrawerList.ItemsSource = menuList;
