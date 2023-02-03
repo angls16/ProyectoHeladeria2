@@ -24,12 +24,12 @@ namespace ProyectoHeladeria
 
             menuList = new List<MasterPageItem>();
             var page1 = new MasterPageItem() { Title = "Home", Icon = "home.png", TargetType = typeof(Principal) };
-            var page2 = new MasterPageItem() { Title = "Listado Perfiles", Icon = "", TargetType = typeof(ListaPerfil) };
-            var page3 = new MasterPageItem() { Title = "Listado Usuarios", Icon = "", TargetType = typeof(ListaUsuario) };
-            var page4 = new MasterPageItem() { Title = "Listado Clientes", Icon = "", TargetType = typeof(ListaCliente) };
-            var page5 = new MasterPageItem() { Title = "Listado Productos", Icon = "", TargetType = typeof(ListaProducto) };
-            var page6 = new MasterPageItem() { Title = "Listado Ventas", Icon = "", TargetType = typeof(ListaVenta) };
-            var page7 = new MasterPageItem() { Title = "Listado Detalle Ventas", Icon = "", TargetType = typeof(ListaDetalle) };
+            var page2 = new MasterPageItem() { Title = "Perfiles", Icon = "", TargetType = typeof(ListaPerfil) };
+            var page3 = new MasterPageItem() { Title = "Usuarios", Icon = "", TargetType = typeof(ListaUsuario) };
+            var page4 = new MasterPageItem() { Title = "Clientes", Icon = "", TargetType = typeof(ListaCliente) };
+            var page5 = new MasterPageItem() { Title = "Productos", Icon = "", TargetType = typeof(ListaProducto) };
+            var page6 = new MasterPageItem() { Title = "Ventas", Icon = "", TargetType = typeof(ListaVenta) };
+            var page7 = new MasterPageItem() { Title = "Detalle Ventas", Icon = "", TargetType = typeof(ListaDetalle) };
 
             if (idPerfil == 1)
             {

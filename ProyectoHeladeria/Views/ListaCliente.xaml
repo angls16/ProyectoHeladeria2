@@ -26,12 +26,11 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Margin="2,0,3,0"  Text="Id" VerticalOptions="Center"  Grid.Column="0" FontAttributes="Bold" />
-                    <Label Margin="2,0,2,0"  Text="Cedula" VerticalOptions="Center"  Grid.Column="1" FontAttributes="Bold" />
-                    <Label Margin="2,0,2,0"  Text="Nombres" VerticalOptions="Center"  Grid.Column="2" FontAttributes="Bold" />
+                <Label Margin="2,0,2,0"  Text="Nombres" VerticalOptions="Center"  Grid.Column="2" FontAttributes="Bold" />
                 <Label Margin="2,0,2,0"  Text="Apellidos" VerticalOptions="Center"  Grid.Column="3" FontAttributes="Bold" />
-                    <Label Margin="2,0,2,0"  Text="Telefono" VerticalOptions="Center"  Grid.Column="4" FontAttributes="Bold" />
-                    <Label Margin="2,0,2,0"  Text="Direccion" VerticalOptions="Center"  Grid.Column="5" FontAttributes="Bold" />
-                    <Label Margin="2,0,2,0"  Text="Correo" VerticalOptions="Center"  Grid.Column="5" FontAttributes="Bold" />
+                <Label Margin="2,0,2,0"  Text="Cedula" VerticalOptions="Center"  Grid.Column="1" FontAttributes="Bold" />
+                <Label Margin="2,0,2,0"  Text="Telefono" VerticalOptions="Center"  Grid.Column="4" FontAttributes="Bold" />
+                <Label Margin="2,0,2,0"  Text="Correo" VerticalOptions="Center"  Grid.Column="5" FontAttributes="Bold" />
                 <Label Margin="2,0,2,0"  Text="Usuario" VerticalOptions="Center"  Grid.Column="7" FontAttributes="Bold" />
                 <Label Margin="2,0,2,0"  Text="Estado" VerticalOptions="Center"  Grid.Column="8" FontAttributes="Bold" />
 
@@ -49,7 +48,7 @@
             </Grid>
         </Frame>
 
-        <ListView x:Name="lstClientes" SelectionMode="Single" ItemSelected="" >
+            <ListView x:Name="lstClientes" SelectionMode="Single" ItemSelected="lstClientes_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell >
