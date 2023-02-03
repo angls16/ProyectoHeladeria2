@@ -41,10 +41,12 @@ namespace ProyectoHeladeria
                 menuList.Add(page6);
                 menuList.Add(page7);
 
-            }else
+            } else if (idPerfil == 2)
             {
                 menuList.Add(page1);
 
+            } else if (idPerfil == 3) {
+                menuList.Add(page1);
             }
 
 

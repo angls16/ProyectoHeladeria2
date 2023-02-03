@@ -18,8 +18,8 @@ namespace ProyectoHeladeria.Views
     public partial class Login : ContentPage
     {
         //private const string Url = " "
-       
-        private const string Url = "http://192.168.70.110/heladeria/postUsuarioLogin.php?usuario={0}&contrasena={1}";
+        // 192.168.1.12
+        private const string Url = "http://192.168.1.12/heladeria/postUsuarioLogin.php?usuario={0}&contrasena={1}";
 
         private readonly HttpClient client = new HttpClient();
         public ObservableCollection<Usuario> _inicioSesion;
