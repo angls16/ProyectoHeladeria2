@@ -30,7 +30,7 @@ namespace ProyectoHeladeria
             var page5 = new MasterPageItem() { Title = "Listado Productos", Icon = "", TargetType = typeof(ListaProducto) };
             var page6 = new MasterPageItem() { Title = "Listado Ventas", Icon = "", TargetType = typeof(ListaVenta) };
             var page7 = new MasterPageItem() { Title = "Listado Detalle Ventas", Icon = "", TargetType = typeof(ListaDetalle) };
-
+            
 
 
             menuList.Add(page1);
@@ -40,6 +40,7 @@ namespace ProyectoHeladeria
             menuList.Add(page5);
             menuList.Add(page6);
             menuList.Add(page7);
+            
 
 
             navigationDrawerList.ItemsSource = menuList;
@@ -62,6 +63,11 @@ namespace ProyectoHeladeria
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;
 
+        }
+
+        private async void cerrar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Login());
         }
     }
 }

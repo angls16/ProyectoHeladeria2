@@ -2,16 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoHeladeria.Views.ListaUsuario">
-    <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="0">
-            <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO DE USUARIOS" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    <ContentPage.Content >
 
+        <StackLayout Padding="20" Spacing="0" >
+            <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO USUARIOS" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Italic,Bold"/>
+            
             <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
+                
                 <Grid Padding="0">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="65"/>
-                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="80"/>
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
@@ -21,14 +24,14 @@
 
                     </Grid.ColumnDefinitions>
 
-                    <Label Margin="2,0,3,0" Text="Id" VerticalOptions="Center"  Grid.Column="0" />
-                    <Label Margin="2,0,2,0" Text="Nombre" VerticalOptions="Center"  Grid.Column="1" />
-                    <Label Margin="2,0,2,0" Text="Apellido" VerticalOptions="Center"  Grid.Column="2" />
+                    <Label Margin="2,0,3,0"  Text="Id" VerticalOptions="Center"  Grid.Column="0" FontAttributes="Bold" />
+                    <Label Margin="2,0,2,0"  Text="Nombre" VerticalOptions="Center"  Grid.Column="1" FontAttributes="Bold" />
+                    <Label Margin="2,0,2,0"  Text="Apellido" VerticalOptions="Center"  Grid.Column="2" FontAttributes="Bold" />
 
 
-                    <Label Margin="2,0,2,0" Text="Correo" VerticalOptions="Center"  Grid.Column="3" />
-                    <Label Margin="2,0,2,0" Text="Usuario" VerticalOptions="Center"  Grid.Column="4" />
-                    <Label Margin="2,0,2,0" Text="Estado" VerticalOptions="Center"  Grid.Column="5" />
+                    <Label Margin="2,0,2,0"  Text="Correo" VerticalOptions="Center"  Grid.Column="3" FontAttributes="Bold" />
+                    <Label Margin="2,0,2,0"  Text="Usuario" VerticalOptions="Center"  Grid.Column="4" FontAttributes="Bold" />
+                    <Label Margin="2,0,2,0"  Text="Estado" VerticalOptions="Center"  Grid.Column="5" FontAttributes="Bold" />
 
 
 
@@ -44,31 +47,31 @@
                 </Grid>
             </Frame>
 
-            <ListView x:Name="lstUsuarios" SelectionMode="Single" ItemSelected="lstUsuarios_ItemSelected">
+            <ListView x:Name="lstUsuarios" SelectionMode="Single" ItemSelected="lstUsuarios_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <ViewCell >
                             
                                 <Grid Padding="0" RowSpacing="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="25"/>
-                                    <ColumnDefinition Width="55"/>
-                                    <ColumnDefinition Width="90"/>
-                                    <ColumnDefinition Width="150"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="75"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
                                     
                                     
 
                                 </Grid.ColumnDefinitions>
 
-                                <Label Margin="2,0,2,0" Text="{Binding idUsuario}" VerticalOptions="Center"  Grid.Column="0"  />
-                                <Label Margin="2,0,2,0" Text="{Binding nombres}" VerticalOptions="Center"  Grid.Column="1" />
-                                <Label Margin="2,0,2,0" Text="{Binding apellidos}" VerticalOptions="Center"  Grid.Column="2" />
-                              
-                                <Label Margin="2,0,2,0" Text="{Binding correo}" VerticalOptions="Center"  Grid.Column="3" />
-                                <Label Margin="2,0,2,0" Text="{Binding usuario}" VerticalOptions="Center"  Grid.Column="4" />
-                                <Label Margin="2,0,2,0" Text="{Binding estado}" VerticalOptions="Center"  Grid.Column="5" />
+                                <Label Margin="2,20,2,0" Text="{Binding idUsuario}" VerticalOptions="Center"  Grid.Column="0"  FontAttributes="Bold" />
+                                <Label Margin="2,20,2,0" Text="{Binding nombres}" VerticalOptions="Center"  Grid.Column="1"  />
+                                <Label Margin="2,20,2,0" Text="{Binding apellidos}" VerticalOptions="Center"  Grid.Column="2"  />
+
+                                <Label Margin="2,20,2,0" Text="{Binding correo}" VerticalOptions="Center"  Grid.Column="3"  />
+                                <Label Margin="2,20,2,0" Text="{Binding usuario}" VerticalOptions="Center"  Grid.Column="4"  />
+                                <Label Margin="2,20,2,0" Text="{Binding estado}" VerticalOptions="Center"  Grid.Column="5"  />
                                 
 
                             </Grid>
@@ -79,10 +82,29 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Button Text="Insertar" x:Name="btnInsertar"  />
-            <Button Text="Eliminar" x:Name="btnEliminar"   />
-            <Button Text="Eliminar Datos" x:Name="btnEliminarID"  TextColor="White" BackgroundColor="Red"/>
-            <Button Text="Editar" x:Name="btnEditar" Clicked="btnEditar_Clicked" />
+            <Button Text="Insertar" 
+                    x:Name="btnInsertar" 
+                    Background="#8D89EB"
+                    CornerRadius="30"
+                    Margin="0,5,0,5"
+                    FontAttributes="Italic,Bold"/>
+
+            <Button Text="Editar" 
+                    x:Name="btnEditar" 
+                    Background="#8D89EB"
+                    CornerRadius="30"
+                    Margin="0,5,0,5"
+                    FontAttributes="Italic,Bold"
+                    Clicked="btnEditar_Clicked" />
+            
+            <Button Text="Eliminar Datos" 
+                    x:Name="btnEliminarID"  
+                    TextColor="White"
+                    Background="#FF3A3A"
+                    CornerRadius="30"
+                    Margin="0,5,0,5"
+                    FontAttributes="Italic,Bold"/>
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

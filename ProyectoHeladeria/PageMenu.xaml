@@ -63,6 +63,8 @@
                                            VerticalOptions="End"
                                            TextColor="Black"
                                            Margin="0,0,0,7"
+                                           FontAttributes="Italic"
+                                           
                                            
                                            
                                         />
@@ -83,10 +85,12 @@
 
                         <Button
                                                 Text="Cerrar sesion"
-                                                Background="salmon"
+                                                Background="#FD4E4E"
                                                 CornerRadius="30"
                                                 Margin="0,120,0,0"
-                            
+                                                FontAttributes="Italic,Bold"
+                                                x:Name="cerrar"
+                                                Clicked="cerrar_Clicked"
                                                 />
 
                     </StackLayout>

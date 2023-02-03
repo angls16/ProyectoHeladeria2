@@ -6,7 +6,7 @@
              >
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="0">
-            <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO DE PERFIL" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO PERFIL" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Italic,Bold" />
 
             <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
                 <Grid Padding="0">
@@ -45,7 +45,7 @@
                                     
                                 </Grid.ColumnDefinitions>
 
-                                <Label Margin="10,0,10,0" Text="{Binding idPerfil}" VerticalOptions="Center"  Grid.Column="0"  />
+                                <Label Margin="10,0,10,0" Text="{Binding idPerfil}" VerticalOptions="Center"  Grid.Column="0"  FontAttributes="Bold" />
                                 <Label Margin="10,0,10,0" Text="{Binding nombre}" VerticalOptions="Center"  Grid.Column="1" />
                                 <Label Margin="10,0,10,0" Text="{Binding descripcion}" VerticalOptions="Center"  Grid.Column="2" />
                                 
@@ -57,10 +57,23 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Button Text="Insertar" x:Name="btnInsertar"  />
-            <Button Text="Eliminar" x:Name="btnEliminar"   />
-            <Button Text="Eliminar Datos" x:Name="btnEliminarID"  TextColor="White" BackgroundColor="Red"/>
-            <Button Text="Editar" x:Name="btnEditar"  />
+            <Button Text="Insertar" x:Name="btnInsertar" 
+                    Background="#8D89EB"
+                    CornerRadius="30"
+                    Margin="0,5,0,5"
+                    FontAttributes="Italic,Bold" />
+            <Button Text="Editar" x:Name="btnEditar" 
+                    Background="#8D89EB"
+                    CornerRadius="30"
+                    Margin="0,5,0,5"
+                    FontAttributes="Italic,Bold" />
+            <Button Text="Eliminar" x:Name="btnEliminarID"
+                    TextColor="White"
+                    Background="#FF3A3A"
+                    CornerRadius="30"
+                    Margin="0,5,0,5"
+                    FontAttributes="Italic,Bold"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
