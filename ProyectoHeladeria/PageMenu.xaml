@@ -68,9 +68,6 @@
                                         />
 
                                         </StackLayout>
-                                       
-
-
                                     </ViewCell>
 
                                 </DataTemplate>
@@ -80,12 +77,12 @@
 
                         </ListView>
 
-
                         <Button
-                                                Text="Cerrar sesion"
+                                                Text="Cerrar sesión"
                                                 Background="salmon"
                                                 CornerRadius="30"
                                                 Margin="0,120,0,0"
+                            Clicked="Button_Clicked"
                             
                                                 />
 
@@ -94,30 +91,9 @@
 
                 </Grid>
 
-
-
-
-
-                <!-- 
-
-                <StackLayout>
-                
-                        <Label Text="{Binding Header}" />
-                    <Image Source="{Binding Image}" Aspect="Fill"  />
-                    <Label Text="{Binding Footer}" />
-               
-                    
-                    <Frame BackgroundColor="Red" ></Frame>
-                </StackLayout>
-                     -->
-
-     
-
             </StackLayout>
 
         </ContentPage>
-
-
 
     </MasterDetailPage.Master>
 

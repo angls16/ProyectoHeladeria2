@@ -23,13 +23,13 @@ namespace ProyectoHeladeria
             int idPerfil = post.Perfil_idPerfil;
 
             menuList = new List<MasterPageItem>();
-            var page1 = new MasterPageItem() { Title = "Home", Icon = "home.png", TargetType = typeof(Principal) };
-            var page2 = new MasterPageItem() { Title = "Listado Perfiles", Icon = "", TargetType = typeof(ListaPerfil) };
-            var page3 = new MasterPageItem() { Title = "Listado Usuarios", Icon = "", TargetType = typeof(ListaUsuario) };
-            var page4 = new MasterPageItem() { Title = "Listado Clientes", Icon = "", TargetType = typeof(ListaCliente) };
-            var page5 = new MasterPageItem() { Title = "Listado Productos", Icon = "", TargetType = typeof(ListaProducto) };
-            var page6 = new MasterPageItem() { Title = "Listado Ventas", Icon = "", TargetType = typeof(ListaVenta) };
-            var page7 = new MasterPageItem() { Title = "Listado Detalle Ventas", Icon = "", TargetType = typeof(ListaDetalle) };
+            var page1 = new MasterPageItem() { Title = "Home", Icon = "home.ico", TargetType = typeof(Principal) };
+            var page2 = new MasterPageItem() { Title = "Listado Perfiles", Icon = "perfil.ico", TargetType = typeof(ListaPerfil) };
+            var page3 = new MasterPageItem() { Title = "Listado Usuarios", Icon = "user.ico", TargetType = typeof(ListaUsuario) };
+            var page4 = new MasterPageItem() { Title = "Listado Clientes", Icon = "users.ico", TargetType = typeof(ListaCliente) };
+            var page5 = new MasterPageItem() { Title = "Listado Productos", Icon = "ice.ico", TargetType = typeof(ListaProducto) };
+            var page6 = new MasterPageItem() { Title = "Listado Ventas", Icon = "sales.eco", TargetType = typeof(ListaVenta) };
+            var page7 = new MasterPageItem() { Title = "Listado Detalle Ventas", Icon = "venta.eco", TargetType = typeof(ListaDetalle) };
 
             if (idPerfil == 1)
             {
@@ -44,9 +44,18 @@ namespace ProyectoHeladeria
             } else if (idPerfil == 2)
             {
                 menuList.Add(page1);
+                menuList.Add(page3);
+                menuList.Add(page4);
+                menuList.Add(page5);
+                menuList.Add(page6);
+                menuList.Add(page7);
+
 
             } else if (idPerfil == 3) {
                 menuList.Add(page1);
+                menuList.Add(page4);
+                menuList.Add(page7);
+
             }
 
 
@@ -71,5 +80,13 @@ namespace ProyectoHeladeria
             IsPresented = false;
 
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Login());
+
+        }
+
+
     }
 }
