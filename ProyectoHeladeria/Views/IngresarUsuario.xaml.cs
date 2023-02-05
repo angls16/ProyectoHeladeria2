@@ -14,7 +14,7 @@ namespace ProyectoHeladeria.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IngresarUsuario : ContentPage
     {
-        private const string Url = "http://192.168.70.110/heladeria/postUsuario.php";
+        private const string Url = "http://192.168.1.12/heladeria/postUsuario.php";
         public IngresarUsuario()
         {
             InitializeComponent();
@@ -46,8 +46,8 @@ namespace ProyectoHeladeria.Views
                 parameters.Add("Perfil_idPerfil", "3");
                 client.UploadValues(Url, "POST", parameters);
 
-                await Navigation.PushAsync(new Login());
-                //DisplayAlert("Sucess", "Registro Ingresado del Usuario: " + txtNombre.Text + " " + txtApellido.Text, " Cerrar ");
+               // await Navigation.PushAsync(new Login());
+                await DisplayAlert("Sucess", "Registro Ingresado del Usuario: " + entNombres.Text + " " + entApellidos.Text, " Cerrar ");
                 // Limpiar();
 
 

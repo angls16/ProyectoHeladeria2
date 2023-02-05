@@ -29,7 +29,7 @@ namespace ProyectoHeladeria
             var page4 = new MasterPageItem() { Title = "Listado Clientes", Icon = "users.ico", TargetType = typeof(ListaCliente) };
             var page5 = new MasterPageItem() { Title = "Listado Productos", Icon = "ice.ico", TargetType = typeof(ListaProducto) };
             var page6 = new MasterPageItem() { Title = "Listado Ventas", Icon = "sales.eco", TargetType = typeof(ListaVenta) };
-            var page7 = new MasterPageItem() { Title = "Listado Detalle Ventas", Icon = "venta.eco", TargetType = typeof(ListaDetalle) };
+            var page7 = new MasterPageItem() { Title = "Listado Detalle Ventas", Icon = "venta.eco", TargetType = typeof(DetalleVentas) };
 
             if (idPerfil == 1)
             {

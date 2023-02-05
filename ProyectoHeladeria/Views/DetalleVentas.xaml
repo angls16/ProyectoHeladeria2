@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoHeladeria.Views.DetalleVentas">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="0">
+            <Label Margin="0,0,0,0" FontSize="Large" Text="Carrito de Helados" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Frame  BackgroundColor="Aqua" Grid.Row="0" CornerRadius="30"  >
+                    <StackLayout >
+                        <Image Source="helado.png" />
+
+                        <Label x:Name="entIdProducto" IsVisible="false" />
+                        <Label x:Name="entNombreProducto" />
+                        <Label x:Name="entPrecio" />
+                        <Label x:Name="entAdereso" />
+                        <Label x:Name="entSabor" />
+
+                    </StackLayout>
+                </Frame>
+                    
+
+
+
+                
+                
+                
+                
+                
+                
+            </Grid>
+            <StackLayout Grid.Row="1" >
+                <Button Text="Agregar" x:Name="btnAgregar" Clicked="btnAgregar_Clicked" />
+
+
+
+            </StackLayout>
+
+
+
+
+
+
+
+
+        </StackLayout>
+
+   
+
+    </ContentPage.Content>
+</ContentPage>

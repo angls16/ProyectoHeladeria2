@@ -15,7 +15,7 @@ namespace ProyectoHeladeria.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListaPerfil : ContentPage
 	{
-        private const string Url = "http://192.168.70.110/heladeria/postPerfil.php";
+        private const string Url = "http://192.168.1.12/heladeria/postPerfil.php";
 
         private readonly HttpClient client = new HttpClient();
         public ObservableCollection<Perfil> _post;
