@@ -27,14 +27,17 @@
 
         </StackLayout>
         <StackLayout Grid.Row="1" Padding="35"  >
-            <Button   Text="Home"  BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,40,20"/>
+            <Button   Text="Home" x:Name="listadoHome" ImageSource="home.ico" Clicked="listadoHome_Clicked"  BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,40,20"/>
             <Button   Text="Listado de perfiles" x:Name="listadoPerfiles" Clicked="listadoPerfiles_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
             <Button   Text="Listado de Usuarios" x:Name="listadoUsuarios" Clicked="listadoUsuarios_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
             <Button   Text="Listado de Clientes" x:Name="listadoClientes" Clicked="listadoClientes_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
             <Button   Text="Listado de Productos" x:Name="listadoProductos" Clicked="listadoProductos_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
             <Button   Text="Listado de Ventas" x:Name="listadoVentas" Clicked="listadoVentas_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
-            <Button   Text="Listado de Detalle Ventas" x:Name="listadoDetalles" Clicked="listadoDetalles_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
-            <Button   Text="Cerrar sesion"  BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,40,20"/>
+            <!--
+                <Button   Text="Listado de Detalle Ventas" x:Name="listadoDetalles" Clicked="listadoDetalles_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
+          -->
+            <Button Text="Cerrar sesión" Background="salmon" CornerRadius="30"  Clicked="Button_Clicked"/>
+                                                
         </StackLayout>
         
         

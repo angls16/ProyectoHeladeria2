@@ -5,6 +5,7 @@
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="0">
             <Label Margin="0,0,0,0" FontSize="Large" Text="Carrito de Helados" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label x:Name="lblNVenta" />
             <ScrollView>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -83,7 +84,7 @@
                 </Grid>
               
             </ScrollView>
-            <Button Text="Realizar Compra" x:Name="btnCompra"  />
+            <Button Text="Realizar Compra" x:Name="btnCompra" Clicked="btnCompra_Clicked"  />
         </StackLayout>
 
    

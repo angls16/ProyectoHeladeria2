@@ -13,7 +13,7 @@ namespace ProyectoHeladeria.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EditarUsuario : ContentPage
 	{
-        private const string Url = "http://192.168.1.12/heladeria/postUsuario.php?idUsuario={0}&cedula={1}&nombres={2}&apellidos={3}&telefono={4}&direccion={5}&correo={6}&usuario={7}&contrasena={8}&estado={9}&imagen={10}&Perfil_idPerfil={11}";
+        private const string Url = "http://192.168.56.1/heladeria/postUsuario.php?idUsuario={0}&cedula={1}&nombres={2}&apellidos={3}&telefono={4}&direccion={5}&correo={6}&usuario={7}&contrasena={8}&estado={9}&imagen={10}&Perfil_idPerfil={11}";
 		public EditarUsuario(int idUsuario, string cedula, string nombres, string apellidos, string telefono, string direccion, string correo, string usuario, string contraseña, int estado, string imagen, int Perfil_idPerfil)
 		{
 			InitializeComponent ();

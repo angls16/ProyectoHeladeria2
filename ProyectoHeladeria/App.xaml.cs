@@ -7,7 +7,7 @@ namespace ProyectoHeladeria
 {
     public partial class App : Application
     {
-        //public static MasterDetailPage MasterDetail { get; set; }
+        public static MasterDetailPage MasterDetail { get; set; }
         public App()
         {
             InitializeComponent();

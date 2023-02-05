@@ -25,14 +25,14 @@ namespace ProyectoHeladeria.Views
                 listadoClientes.IsVisible = true;
                 listadoProductos.IsVisible = true;
                 listadoVentas.IsVisible = true;
-                listadoDetalles.IsVisible = true;
+                //listadoDetalles.IsVisible = true;
             } else if ( perfil == 2 ) {
                 listadoPerfiles.IsVisible = false;
                 listadoUsuarios.IsVisible = false;
                 listadoClientes.IsVisible = false;
                 listadoProductos.IsVisible = true;
                 listadoVentas.IsVisible = true;
-                listadoDetalles.IsVisible = true;
+                //listadoDetalles.IsVisible = true;
 
             } else if ( perfil == 3 ) {
                 listadoPerfiles.IsVisible = false;
@@ -40,7 +40,7 @@ namespace ProyectoHeladeria.Views
                 listadoClientes.IsVisible = false;
                 listadoProductos.IsVisible = true;
                 listadoVentas.IsVisible = false;
-                listadoDetalles.IsVisible = true;
+                //listadoDetalles.IsVisible = true;
 
             }
 
@@ -73,7 +73,17 @@ namespace ProyectoHeladeria.Views
 
         private async void listadoDetalles_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListaDetalle());
+          //  await Navigation.PushAsync(new DetalleVentas());
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Login());
+        }
+
+        private async void listadoHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Principal());
         }
     }
 }

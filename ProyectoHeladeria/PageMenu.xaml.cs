@@ -22,7 +22,7 @@ namespace ProyectoHeladeria
             lblUsuario.Text = post.correo;
             int idPerfil = post.Perfil_idPerfil;
 
-            menuList = new List<MasterPageItem>();
+            menuList = new List<MasterPageItem>( );
             var page1 = new MasterPageItem() { Title = "Home", Icon = "home.ico", TargetType = typeof(Principal) };
             var page2 = new MasterPageItem() { Title = "Listado Perfiles", Icon = "perfil.ico", TargetType = typeof(ListaPerfil) };
             var page3 = new MasterPageItem() { Title = "Listado Usuarios", Icon = "user.ico", TargetType = typeof(ListaUsuario) };

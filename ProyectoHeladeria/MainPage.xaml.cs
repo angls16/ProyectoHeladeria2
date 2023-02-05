@@ -18,9 +18,9 @@ namespace ProyectoHeladeria
         {
             
             InitializeComponent();
-            //this.Master = new Master(post.correo,post.Perfil_idPerfil);
-            //this.Detail = new NavigationPage(new Principal());
-            //App.MasterDetail = this;
+            this.Master = new Master(post.correo,post.Perfil_idPerfil);
+            this.Detail = new NavigationPage(new Principal());
+            App.MasterDetail = this;
         }
     }
 }
