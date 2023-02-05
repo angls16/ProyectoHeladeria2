@@ -53,6 +53,7 @@ namespace ProyectoHeladeria
 
             } else if (idPerfil == 3) {
                 menuList.Add(page1);
+                menuList.Add(page5);
                 menuList.Add(page4);
                 menuList.Add(page7);
 

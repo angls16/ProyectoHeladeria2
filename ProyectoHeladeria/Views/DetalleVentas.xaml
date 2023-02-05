@@ -5,53 +5,85 @@
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="0">
             <Label Margin="0,0,0,0" FontSize="Large" Text="Carrito de Helados" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="300" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
 
-                <Frame  BackgroundColor="Aqua" Grid.Row="0" CornerRadius="30"  >
-                    <StackLayout >
-                        <Image Source="helado.png" />
+                    <Frame   Grid.Row="0" CornerRadius="30" BackgroundColor="Aqua"  >
+                        <StackLayout >
+                            <Image Source="helado.png" />
 
-                        <Label x:Name="entIdProducto" IsVisible="false" />
-                        <Label x:Name="entNombreProducto" />
-                        <Label x:Name="entPrecio" />
-                        <Label x:Name="entAdereso" />
-                        <Label x:Name="entSabor" />
+                            <Label x:Name="entIdProducto" IsVisible="false" />
+                            <Label x:Name="entNombreProducto" />
+                            <Label x:Name="entPrecio" />
+                            <Label x:Name="entAdereso" />
+                            <Label x:Name="entSabor" />
+                            <Label Text="Cantidad" HorizontalOptions="EndAndExpand" />
+                            <Entry BackgroundColor="Yellow" Keyboard="Numeric" x:Name="cantidad" HorizontalOptions="EndAndExpand" />
+
+                        </StackLayout>
+
+                    </Frame>
+
+                    <StackLayout Grid.Row="1" BackgroundColor="red" >
+                        <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
+                            <Grid Padding="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+
+
+
+
+
+                                </Grid.ColumnDefinitions>
+
+                                <Label Margin="2,0,3,0" Text="Id" VerticalOptions="Center"  Grid.Column="0" />
+                                <Label Margin="2,0,2,0" Text="IdProducto" VerticalOptions="Center"  Grid.Column="1" />
+                                <Label Margin="2,0,2,0" Text="Producto" VerticalOptions="Center"  Grid.Column="2" />
+                                <Label Margin="2,0,2,0" Text="Cantidad" VerticalOptions="Center"  Grid.Column="3" />
+                                <Label Margin="2,0,2,0" Text="Precio Total" VerticalOptions="Center"  Grid.Column="4" />
+
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+
+
+
+                            </Grid>
+                        </Frame>
+                        <Button Text="Agregar Producto" x:Name="btnAgregarProducto" Clicked="btnAgregar_Clicked" />
 
                     </StackLayout>
-                </Frame>
-                    
 
-
-
-                
-                
-                
-                
-                
-                
-            </Grid>
-            <StackLayout Grid.Row="1" >
-                <Button Text="Agregar" x:Name="btnAgregar" Clicked="btnAgregar_Clicked" />
-
-
-
-            </StackLayout>
-
-
-
-
-
-
-
-
+                    <StackLayout Grid.Row="3" BackgroundColor="#FACEBD" Padding="50,0,0,0" >
+                        <Label Text="Subtotal"/>
+                        <Entry Placeholder="120.50" />
+                        <Label Text="Iva:" />
+                        <Entry Placeholder="12" />
+                        <Label Text="Total" />
+                        <Entry Placeholder="300" />
+                       
+                    </StackLayout>
+                 
+                </Grid>
+              
+            </ScrollView>
+            <Button Text="Realizar Compra" x:Name="btnCompra"  />
         </StackLayout>
 
    
