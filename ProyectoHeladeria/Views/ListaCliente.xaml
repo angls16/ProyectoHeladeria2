@@ -10,14 +10,11 @@
                 <Grid Padding="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="65"/>
-                        <ColumnDefinition Width="90"/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
-
-
-
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="60"/>
 
                     </Grid.ColumnDefinitions>
 
@@ -52,10 +49,10 @@
                             <Grid Padding="0" RowSpacing="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="25"/>
-                                    <ColumnDefinition Width="55"/>
-                                    <ColumnDefinition Width="90"/>
-                                    <ColumnDefinition Width="150"/>
-                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="20"/>
 
 

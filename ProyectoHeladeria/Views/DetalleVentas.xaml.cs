@@ -122,7 +122,7 @@ namespace ProyectoHeladeria.Views
 
             IdVentas = 0;
             await DisplayAlert("Felicidades ", "Compra Realizada", " Ok");
-            await Navigation.PushAsync(new ListaProducto(Usuario_idUsuario, IdVentas));
+            await Navigation.PushAsync(new Principal());
             /// Insertar venta
             
         }

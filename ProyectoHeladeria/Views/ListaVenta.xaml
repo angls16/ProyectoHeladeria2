@@ -3,10 +3,83 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoHeladeria.Views.ListaVenta">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20" Spacing="0">
+            <Label Margin="0,0,0,20" FontSize="Large" Text="Mis Compras" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+            <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+
+
+
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="2,0,3,0" Text="IdVentas" VerticalOptions="Center"  Grid.Column="0" />
+                    <Label Margin="2,0,2,0" Text="Número de Venta" VerticalOptions="Center"  Grid.Column="1" />
+                    <Label Margin="2,0,2,0" Text="Fecha" VerticalOptions="Center"  Grid.Column="2" />
+
+
+                    <Label Margin="2,0,2,0" Text="Precio Total" VerticalOptions="Center"  Grid.Column="3" />
+                    <Label Margin="2,0,2,0" Text="Usuario" VerticalOptions="Center"  Grid.Column="4" />
+                    <Label Margin="2,0,2,0" Text="Cliente" VerticalOptions="Center"  Grid.Column="5" />
+
+
+
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="5" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+
+
+                </Grid>
+            </Frame>
+
+            <ListView x:Name="lstVentas" SelectionMode="Single" ItemSelected="lstVentas_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid Padding="0" RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+
+
+
+                                </Grid.ColumnDefinitions>
+
+                                <Label Margin="2,0,2,0" Text="{Binding idVentas}" VerticalOptions="Center"  Grid.Column="0"  />
+                                <Label Margin="2,0,2,0" Text="{Binding numeroVenta}" VerticalOptions="Center"  Grid.Column="1" />
+                                <Label Margin="2,0,2,0" Text="{Binding fecha}" VerticalOptions="Center"  Grid.Column="2" />
+
+                                <Label Margin="2,0,2,0" Text="{Binding precioTotal}" VerticalOptions="Center"  Grid.Column="3" />
+                                <Label Margin="2,0,2,0" Text="{Binding Usuario_idUsuario}" VerticalOptions="Center"  Grid.Column="4" />
+                                <Label Margin="2,0,2,0" Text="{Binding Clientes_idUsuario}" VerticalOptions="Center"  Grid.Column="5" />
+
+
+                            </Grid>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
