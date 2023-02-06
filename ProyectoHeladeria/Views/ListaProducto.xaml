@@ -8,6 +8,7 @@
 
         <StackLayout Padding="20" Spacing="0">
             <Label x:Name="lblIdUsuario" />
+            <Label x:Name="lblIdVenta" />
             <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO DE PRODUCTOS" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             
 

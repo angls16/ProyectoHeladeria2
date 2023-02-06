@@ -6,6 +6,7 @@
         <StackLayout Padding="20" Spacing="0">
             <Label Margin="0,0,0,0" FontSize="Large" Text="Carrito de Helados" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             <Label x:Name="lblNVenta" />
+            
             <ScrollView>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -33,9 +34,10 @@
                         </StackLayout>
 
                     </Frame>
-
-                    <StackLayout Grid.Row="1" BackgroundColor="red" >
-                        <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
+                 
+                    <StackLayout Grid.Row="1" BackgroundColor="#F8FABD" >
+                        <Button Text="Agregar Producto" x:Name="btnAgregarProducto" Clicked="btnAgregar_Clicked" />
+                        <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="100" Padding="0">
                             <Grid Padding="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -43,10 +45,6 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
-
-
-
-
 
                                 </Grid.ColumnDefinitions>
 
@@ -67,7 +65,41 @@
 
                             </Grid>
                         </Frame>
-                        <Button Text="Agregar Producto" x:Name="btnAgregarProducto" Clicked="btnAgregar_Clicked" />
+                      
+                        <ListView x:Name="lstDetalles" SelectionMode="Single" ItemSelected="lstDetalles_ItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+
+                                        <Grid Padding="0" RowSpacing="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label  Text="{Binding idDetalleVentas}" VerticalOptions="Center"  Grid.Column="0"  />
+                                            <Label  Text="{Binding Productos_idProductos}" VerticalOptions="Center"  Grid.Column="1" />
+                                            <Label  Text="{Binding Ventas_idVentas}" VerticalOptions="Center"  Grid.Column="2" />
+
+                                            <Label  Text="{Binding cantidad}" VerticalOptions="Center"  Grid.Column="3" />
+                                            <Label  Text="{Binding precio_venta}" VerticalOptions="Center"  Grid.Column="4" />
+                                            
+
+
+                                        </Grid>
+
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+
+                
 
                     </StackLayout>
 

@@ -18,28 +18,39 @@ namespace ProyectoHeladeria.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetalleVentas : ContentPage
     {
+        
+        
 
-        private const string Url = "http://192.168.56.1/heladeria/postVentas.php";
+        private const string UrlDetalle = "http://192.168.56.1/heladeria/postDetalles.php";
+        // Ver Detalle
+
         //private readonly HttpClient client = new HttpClient();
-        //public ObservableCollection<Usuario> _inicioSesion;
-        //consulta selecccionar id donde idUsuario = iUsuario
-        private readonly HttpClient venta = new HttpClient();
-        public ObservableCollection<Ventas> _post;
-        public int idVentas = -1, Usuario_idUsuario, Cliente_idCliente;
-        public string numeroVenta, fecha;
+        //public ObservableCollection<DetalleVenta> _post;
+       
+
+        //private const string UrlDetalleUnitario = "http://192.168.56.1/heladeria/postDetallesUnitario.php?Ventas_idVentas={0}";
+
+        private readonly HttpClient client = new HttpClient();
+        public ObservableCollection<DetalleVenta> _post;
+
+        public int idDetalleVentas = -1, Productos_idProductos, Ventas_idVentas, cantidad;
+        double precio_venta;
+
+        public int Usuario_idUsuario;
+
+
         // traer el idvENTA
         public int IdVentas;
-        //// Insertar Detalle Venta 
-        private const string UrlDetalle = "http://192.168.56.1/heladeria/postDetalles.php";
+        
         // Insertar Venta Final
         public double PrecioFinal;
 
-
-
+       
 
         public DetalleVentas(int idProducto, string nombreProducto, string adereso, double precio,string sabor,int idUsuario,int idVenta )
         {
             InitializeComponent();
+            Get();
             entIdProducto.Text = idProducto.ToString();
             entNombreProducto.Text = nombreProducto.ToString();
             entAdereso.Text = adereso.ToString();
@@ -86,9 +97,10 @@ namespace ProyectoHeladeria.Views
 
 
                 detalle.UploadValues(UrlDetalle, "POST", parameters);
-                //entPrecioFinal.Text=PrecioFinal.ToString();
+                
                 //await DisplayAlert("Agregado Correctamente ", precioTotal.ToString().Replace(",", "."), " Ok");
-                //await DisplayAlert("Agregado Correctamente ", PrecioFinal.ToString().Replace(",", "."), " Ok");
+                await DisplayAlert("Agregado Correctamente ", PrecioFinal.ToString().Replace(",", "."), " Ok");
+                
                 // await Navigation.PushAsync(new Login());
                 //await DisplayAlert("Sucess", "Registro Ingresado del Usuario: " + entNombres.Text + " " + entApellidos.Text, " Cerrar ");
                 // Limpiar();
@@ -109,13 +121,67 @@ namespace ProyectoHeladeria.Views
         {
 
             IdVentas = 0;
+            await DisplayAlert("Felicidades ", "Compra Realizada", " Ok");
             await Navigation.PushAsync(new ListaProducto(Usuario_idUsuario, IdVentas));
             /// Insertar venta
-
+            
         }
 
+        private void lstDetalles_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var obj = (DetalleVenta)e.SelectedItem;
+            idDetalleVentas = obj.idDetalleVentas;
+            Productos_idProductos = obj.Productos_idProductos;
+            Ventas_idVentas = obj.Ventas_idVentas;
+            cantidad = obj.cantidad;
+            precio_venta = obj.precio_venta;
+
+        }
+        public async void Get()
+        {
+            try
+            {
+                var content = await client.GetStringAsync(UrlDetalle);
+                List<DetalleVenta> post =
+                    JsonConvert.DeserializeObject<List<DetalleVenta>>(content);
+                _post = new ObservableCollection<DetalleVenta>(post);
+                lstDetalles.ItemsSource = post;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            ////////////ver unitario
+            //try
+            //{
+            //    var uri = new Uri(string.Format(UrlDetalleUnitario, IdVentas));
+            //    var content = await client.GetStringAsync(uri);
+
+            //    if (content != "false")
+            //    {
+            //        DetalleVenta post = JsonConvert.DeserializeObject<DetalleVenta>(content);
+            //        lblCampo.Text = post.idDetalleVentas.ToString();
+            //    //    List<DetalleVenta> post =
+            //    //    JsonConvert.DeserializeObject<List<DetalleVenta>>(content);
+            //    //_post = new ObservableCollection<DetalleVenta>(post);
+            //    //lstDetalles.ItemsSource = post;
+            //// await Navigation.PushAsync(new MainPage(post));
+            //// await Navigation.PushAsync(new PageMenu(post));
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert("Alerta", "No seleccionado", "Cerrar");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex);
+            //}
 
 
 
+        }
     }
 }

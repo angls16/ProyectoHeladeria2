@@ -34,56 +34,14 @@ namespace ProyectoHeladeria.Views
 
         //Usuario
         public int IdUsuarioVerificar;
-        public int IdVentas = 0;
+        public int IdVentas;
+
         
-      
-        
-
-        //private async void btnAgregar_Clicked(object sender, EventArgs e)
-        //{
-       
-        //    if (idProductos > 0  )
-        //    {
-        //        /////////////////////////////////////
-        //        int IdUsuario = IdUsuarioVerificar;
-        //        double PrecioTotal = 0;
-        //        try
-        //        {
-        //            var uri = new Uri(string.Format(UrlVenta2, IdUsuario, PrecioTotal));
-        //            var content = await client.GetStringAsync(uri);
-
-        //            if (content != "false")
-        //            {
-        //                Ventas post = JsonConvert.DeserializeObject<Ventas>(content);
-        //                await Navigation.PushAsync(new DetalleVentas(idProductos, nombreProducto, adereso, precio, sabor, IdUsuarioVerificar, post.idVentas));
-        //                //await Navigation.PushAsync(new MainPage(post));
-        //                // await Navigation.PushAsync(new PageMenu(post));
-        //            }
-        //            else
-        //            {
-        //                await DisplayAlert("Alerta", "Ingrese Venta.", "Cerrar");
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Console.WriteLine(ex);
-        //        }
-        //        /////////////////////////////
-
-        //       // await Navigation.PushAsync(new DetalleVentas(idProductos, nombreProducto, adereso, precio, sabor, IdUsuarioVerificar, post.idVentas));
-
-        //    }
-        //    else {
-        //        await DisplayAlert("Alerta", "No se ha seleccionado ", "OK");
-        //    }
-            
-        //}
-
         private  async void btnAgregarVenta_Clicked(object sender, EventArgs e)
         {
             if (idProductos > 0)
             {
-                if (IdVentas < 1) {
+                if (IdVentas == 0) {
                     //await DisplayAlert("Alerta ", "Debe terminar la compra", " Ok ");
                     // INSERTAR VENTA /////////////
                     var DateAndTime = DateTime.Now;
@@ -175,6 +133,7 @@ namespace ProyectoHeladeria.Views
             IdUsuarioVerificar = idUsuario;
             lblIdUsuario.Text = idUsuario.ToString();
             IdVentas= idVenta;
+            lblIdVenta.Text = IdVentas.ToString();
         }
 
      

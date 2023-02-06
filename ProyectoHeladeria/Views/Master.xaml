@@ -12,6 +12,7 @@
             
             
             
+            
         </Grid.RowDefinitions>
         <StackLayout Grid.Row="0" Padding="30" BackgroundColor="Orange" >
             <Label Text="Bienvenido" HorizontalOptions="Center" FontSize="40" Padding="0" Margin="-20" />
@@ -31,19 +32,19 @@
             <Button Text="Home" x:Name="listadoHome"  Clicked="listadoHome_Clicked"  BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,40,20"/>
         
             
-            <Button   Text="Listado de perfiles" x:Name="listadoPerfiles" Clicked="listadoPerfiles_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
-            <Button   Text="Listado de Usuarios" x:Name="listadoUsuarios" Clicked="listadoUsuarios_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
-            <Button   Text="Listado de Clientes" x:Name="listadoClientes" Clicked="listadoClientes_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
-            <Button   Text="Listado de Productos" x:Name="listadoProductos" Clicked="listadoProductos_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
-            <Button   Text="Listado de Ventas" x:Name="listadoVentas" Clicked="listadoVentas_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
+            <Button   Text="Perfiles" x:Name="listadoPerfiles" Clicked="listadoPerfiles_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
+            <Button   Text="Usuarios" x:Name="listadoUsuarios" Clicked="listadoUsuarios_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
+            <Button   Text="Clientes" x:Name="listadoClientes" Clicked="listadoClientes_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
+            <Button   Text="Productos" x:Name="listadoProductos" Clicked="listadoProductos_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
+            <Button   Text="Mis Compras" x:Name="listadoVentas" Clicked="listadoVentas_Clicked" BackgroundColor="Transparent"  HorizontalOptions="Start" Padding="0,10,0,20"/>
             <!--
                 <Button   Text="Listado de Detalle Ventas" x:Name="listadoDetalles" Clicked="listadoDetalles_Clicked" BackgroundColor="Transparent" HorizontalOptions="Start" Padding="0,10,0,20"/>
           -->
-            <Button Text="Cerrar sesión" Background="salmon" CornerRadius="30"  Clicked="Button_Clicked"/>
-                                                
+
+            <Button  Text="Cerrar sesión"  Background="salmon" CornerRadius="30"  Clicked="Button_Clicked"/>
         </StackLayout>
-        
-        
+
+
     </Grid>
     
     
