@@ -1,4 +1,5 @@
-﻿using ProyectoHeladeria.Models;
+﻿using Newtonsoft.Json;
+using ProyectoHeladeria.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,22 +18,31 @@ namespace ProyectoHeladeria.Views
     {
 
         private const string Url = "http://192.168.56.1/heladeria/postVentas.php";
+
+       
+        //private readonly HttpClient client = new HttpClient();
+        //public ObservableCollection<Usuario> _inicioSesion;
+
+
         //consulta selecccionar id donde idUsuario = iUsuario
         private readonly HttpClient venta = new HttpClient();
         public ObservableCollection<Ventas> _post;
         public int idVentas = -1, Usuario_idUsuario, Cliente_idCliente;
         public string numeroVenta, fecha;
-        public double precioTotal;
+        
+        // traer el idvENTA
 
-        public DetalleVentas(int idProducto, string nombreProducto, string adereso, double precio,string sabor )
+
+        public DetalleVentas(int idProducto, string nombreProducto, string adereso, double precio,string sabor,int idUsuario,int idVenta )
         {
             InitializeComponent();
             entIdProducto.Text = idProducto.ToString();
             entNombreProducto.Text = nombreProducto.ToString();
             entAdereso.Text = adereso.ToString();
             entPrecio.Text = precio.ToString(); 
-            entSabor.Text = sabor.ToString();   
-
+            entSabor.Text = sabor.ToString();
+            Usuario_idUsuario = idUsuario;
+            lblNVenta.Text = idVenta.ToString();
            
            
         }
@@ -40,13 +50,17 @@ namespace ProyectoHeladeria.Views
         
         private async void btnAgregar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListaProducto());
+            
+        
+             await Navigation.PushAsync(new ListaProducto(Usuario_idUsuario));
             //agrgar a DetalleVenta
             //id venta
             // id Detalle Venta
             //id producto -------
             //cantidad 
             //precio venta
+
+
         }
 
         private void btnCompra_Clicked(object sender, EventArgs e)

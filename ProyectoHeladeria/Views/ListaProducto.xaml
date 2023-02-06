@@ -7,6 +7,7 @@
     <ContentPage.Content>
 
         <StackLayout Padding="20" Spacing="0">
+            <Label x:Name="lblIdUsuario" />
             <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO DE PRODUCTOS" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             
 
@@ -57,7 +58,8 @@
                 </StackLayout>
                 
             </ScrollView>
-            <Button Text="Agregar" x:Name="btnAgregar" Clicked="btnAgregar_Clicked" />
+            <Button Text="Agregar Producto " x:Name="btnAgregar" Clicked="btnAgregar_Clicked" />
+            <Button Text="Agregar Venta" x:Name="btnAgregarVenta" Clicked="btnAgregarVenta_Clicked" />
             <!--
                 <Button Text="Insertar" x:Name="btnInsertar"  />
             <Button Text="Eliminar" x:Name="btnEliminar"   />

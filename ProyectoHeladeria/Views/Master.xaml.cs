@@ -13,12 +13,12 @@ namespace ProyectoHeladeria.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Master : ContentPage
     {
-
-        public Master(string correo,int perfil)
+        int IdUsuario;
+        public Master(string correo,int perfil,int idUsuario)
         {
             InitializeComponent();
              lblUsuario.Text = correo;
-
+            IdUsuario = idUsuario;
             if ( perfil == 1 ) {
                 listadoPerfiles.IsVisible = true;
                 listadoUsuarios.IsVisible = true;
@@ -63,7 +63,7 @@ namespace ProyectoHeladeria.Views
 
         private async void listadoProductos_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListaProducto());
+            await Navigation.PushAsync(new ListaProducto(IdUsuario));
         }
 
         private async void listadoVentas_Clicked(object sender, EventArgs e)
