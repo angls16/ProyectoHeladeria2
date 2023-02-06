@@ -28,7 +28,7 @@
                             <Label x:Name="entAdereso" />
                             <Label x:Name="entSabor" />
                             <Label Text="Cantidad" HorizontalOptions="EndAndExpand" />
-                            <Entry BackgroundColor="Yellow" Keyboard="Numeric" x:Name="cantidad" HorizontalOptions="EndAndExpand" />
+                            <Entry BackgroundColor="Yellow" Text="1" Keyboard="Numeric" x:Name="lblCantidad" HorizontalOptions="EndAndExpand" />
 
                         </StackLayout>
 
@@ -77,7 +77,7 @@
                         <Label Text="Iva:" />
                         <Entry Placeholder="12" />
                         <Label Text="Total" />
-                        <Entry Placeholder="300" />
+                        <Entry Placeholder="300" x:Name="entPrecioFinal" />
                        
                     </StackLayout>
                  

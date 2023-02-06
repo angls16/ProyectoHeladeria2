@@ -162,6 +162,7 @@ namespace ProyectoHeladeria.Views
             adereso= itemSelected.adereso;
             sabor= itemSelected.sabor;
             precio = itemSelected.costo;
+            
             //imagen= itemSelected.imagen;
 
         }
