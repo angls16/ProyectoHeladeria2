@@ -29,9 +29,9 @@ namespace ProyectoHeladeria.Views
         public ObservableCollection<Ventas> _post;
         public int idVentas = -1, Usuario_idUsuario, Cliente_idCliente;
         public string numeroVenta, fecha;
-        
-        // traer el idvENTA
 
+        // traer el idvENTA
+        public int IdVentas;
 
         public DetalleVentas(int idProducto, string nombreProducto, string adereso, double precio,string sabor,int idUsuario,int idVenta )
         {
@@ -42,6 +42,8 @@ namespace ProyectoHeladeria.Views
             entPrecio.Text = precio.ToString(); 
             entSabor.Text = sabor.ToString();
             Usuario_idUsuario = idUsuario;
+            IdVentas= idVenta;
+            // id venta
             lblNVenta.Text = idVenta.ToString();
            
            
@@ -52,7 +54,7 @@ namespace ProyectoHeladeria.Views
         {
             
         
-             await Navigation.PushAsync(new ListaProducto(Usuario_idUsuario));
+             await Navigation.PushAsync(new ListaProducto(Usuario_idUsuario,IdVentas));
             //agrgar a DetalleVenta
             //id venta
             // id Detalle Venta
@@ -63,8 +65,10 @@ namespace ProyectoHeladeria.Views
 
         }
 
-        private void btnCompra_Clicked(object sender, EventArgs e)
+        private async void btnCompra_Clicked(object sender, EventArgs e)
         {
+            IdVentas = 0;
+            await Navigation.PushAsync(new ListaProducto(Usuario_idUsuario, IdVentas));
 
         }
     }

@@ -58,7 +58,10 @@
                 </StackLayout>
                 
             </ScrollView>
-            <Button Text="Agregar Producto " x:Name="btnAgregar" Clicked="btnAgregar_Clicked" />
+            <!--
+                <Button Text="Agregar Producto " x:Name="btnAgregar" Clicked="btnAgregar_Clicked" />
+            -->
+            
             <Button Text="Agregar Venta" x:Name="btnAgregarVenta" Clicked="btnAgregarVenta_Clicked" />
             <!--
                 <Button Text="Insertar" x:Name="btnInsertar"  />

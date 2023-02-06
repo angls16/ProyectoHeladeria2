@@ -63,7 +63,7 @@ namespace ProyectoHeladeria.Views
 
         private async void listadoProductos_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListaProducto(IdUsuario));
+            await Navigation.PushAsync(new ListaProducto(IdUsuario,0));
         }
 
         private async void listadoVentas_Clicked(object sender, EventArgs e)

@@ -34,16 +34,93 @@ namespace ProyectoHeladeria.Views
 
         //Usuario
         public int IdUsuarioVerificar;
-
+        public int IdVentas = 0;
         
       
         
 
-        private async void btnAgregar_Clicked(object sender, EventArgs e)
-        {
+        //private async void btnAgregar_Clicked(object sender, EventArgs e)
+        //{
        
-            if (idProductos > 0  )
+        //    if (idProductos > 0  )
+        //    {
+        //        /////////////////////////////////////
+        //        int IdUsuario = IdUsuarioVerificar;
+        //        double PrecioTotal = 0;
+        //        try
+        //        {
+        //            var uri = new Uri(string.Format(UrlVenta2, IdUsuario, PrecioTotal));
+        //            var content = await client.GetStringAsync(uri);
+
+        //            if (content != "false")
+        //            {
+        //                Ventas post = JsonConvert.DeserializeObject<Ventas>(content);
+        //                await Navigation.PushAsync(new DetalleVentas(idProductos, nombreProducto, adereso, precio, sabor, IdUsuarioVerificar, post.idVentas));
+        //                //await Navigation.PushAsync(new MainPage(post));
+        //                // await Navigation.PushAsync(new PageMenu(post));
+        //            }
+        //            else
+        //            {
+        //                await DisplayAlert("Alerta", "Ingrese Venta.", "Cerrar");
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Console.WriteLine(ex);
+        //        }
+        //        /////////////////////////////
+
+        //       // await Navigation.PushAsync(new DetalleVentas(idProductos, nombreProducto, adereso, precio, sabor, IdUsuarioVerificar, post.idVentas));
+
+        //    }
+        //    else {
+        //        await DisplayAlert("Alerta", "No se ha seleccionado ", "OK");
+        //    }
+            
+        //}
+
+        private  async void btnAgregarVenta_Clicked(object sender, EventArgs e)
+        {
+            if (idProductos > 0)
             {
+                if (IdVentas < 1) {
+                    //await DisplayAlert("Alerta ", "Debe terminar la compra", " Ok ");
+                    // INSERTAR VENTA /////////////
+                    var DateAndTime = DateTime.Now;
+                    var Date = DateAndTime.Date.ToString("dd-MM-yyyy");
+                    WebClient venta = new WebClient();
+                    try
+                    {
+                        var parameters = new System.Collections.Specialized.NameValueCollection();
+
+                        parameters.Add("idVentas", "");
+                        parameters.Add("numeroVenta", numeroSerie);
+                        parameters.Add("fecha", Date);
+                        parameters.Add("precioTotal", "");
+
+                        parameters.Add("Usuario_idUsuario", IdUsuarioVerificar.ToString());
+                        parameters.Add("Clientes_idUsuario", "1");
+
+                        venta.UploadValues(UrlVenta, "POST", parameters);
+
+                        // await Navigation.PushAsync(new Login());
+
+                        // Limpiar();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        await DisplayAlert("Alerta ", ex.Message, " Cancelar ");
+                        //mostrar errores en consola
+                        Console.WriteLine(ex.Message, "error");
+                    }
+
+                    //////////////////////////
+
+                }
+                else {
+                   
+                }
                 /////////////////////////////////////
                 int IdUsuario = IdUsuarioVerificar;
                 double PrecioTotal = 0;
@@ -61,7 +138,7 @@ namespace ProyectoHeladeria.Views
                     }
                     else
                     {
-                        await DisplayAlert("Alerta", "Usuario o Password Incorrecto.", "Cerrar");
+                        await DisplayAlert("Alerta", "Ingrese Venta.", "Cerrar");
                     }
                 }
                 catch (Exception ex)
@@ -69,55 +146,7 @@ namespace ProyectoHeladeria.Views
                     Console.WriteLine(ex);
                 }
                 /////////////////////////////
-
-               // await Navigation.PushAsync(new DetalleVentas(idProductos, nombreProducto, adereso, precio, sabor, IdUsuarioVerificar, post.idVentas));
-
-            }
-            else {
-                await DisplayAlert("Alerta", "No se ha seleccionado ", "OK");
-            }
-            
-        }
-
-        private  async void btnAgregarVenta_Clicked(object sender, EventArgs e)
-        {
-            if (idProductos > 0)
-            {
-
-                // INSERTAR VENTA /////////////
-                var DateAndTime = DateTime.Now;
-                var Date = DateAndTime.Date.ToString("dd-MM-yyyy");
-                WebClient venta = new WebClient();
-                try
-                {
-                    var parameters = new System.Collections.Specialized.NameValueCollection();
-
-                    parameters.Add("idVentas", "");
-                    parameters.Add("numeroVenta", numeroSerie);
-                    parameters.Add("fecha", Date);
-                    parameters.Add("precioTotal", "");
-
-                    parameters.Add("Usuario_idUsuario", IdUsuarioVerificar.ToString());
-                    parameters.Add("Clientes_idUsuario", "1");
-
-                    venta.UploadValues(UrlVenta, "POST", parameters);
-
-                    // await Navigation.PushAsync(new Login());
-
-                    // Limpiar();
-
-                }
-                catch (Exception ex)
-                {
-                    await DisplayAlert("Alerta ", ex.Message, " Cancelar ");
-                    //mostrar errores en consola
-                    Console.WriteLine(ex.Message, "error");
-                }
-
-                //////////////////////////
-
-
-               // await Navigation.PushAsync(new DetalleVentas(idProductos, nombreProducto, adereso, precio, sabor,IdUsuarioVerificar,numeroSerie));
+               
             }
             else
             {
@@ -138,12 +167,13 @@ namespace ProyectoHeladeria.Views
         }
 
         
-        public ListaProducto(int idUsuario)
+        public ListaProducto(int idUsuario,int idVenta)
         {
             InitializeComponent();
             Get();
             IdUsuarioVerificar = idUsuario;
             lblIdUsuario.Text = idUsuario.ToString();
+            IdVentas= idVenta;
         }
 
      
