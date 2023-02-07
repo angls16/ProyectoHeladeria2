@@ -5,8 +5,11 @@
              
              >
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="0">
-            <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO DE PERFIL" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <StackLayout Padding="20" Spacing="0"  >
+            <Frame HeightRequest="30"  >
+                <Label FontSize="Medium" TextColor="#0A549B"  Text="LISTADO DE PERFIL"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Frame>
+            
 
             <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
                 <Grid Padding="0">
@@ -57,10 +60,20 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Button Text="Insertar" x:Name="btnInsertar"  />
-            <Button Text="Eliminar" x:Name="btnEliminar"   />
-            <Button Text="Eliminar Datos" x:Name="btnEliminarID"  TextColor="White" BackgroundColor="Red"/>
-            <Button Text="Editar" x:Name="btnEditar"  />
+            <StackLayout>
+                <Button CornerRadius="30" BackgroundColor="#4CAF50" Text="Insertar" x:Name="btnInsertar" TextColor="White"  />
+                <!--<Button Text="Eliminar" x:Name="btnEliminar"   />-->
+
+                <Button CornerRadius="30" Text="Eliminar Datos" x:Name="btnEliminarID"  TextColor="White" BackgroundColor="Red"/>
+
+
+                <Button CornerRadius="30" BackgroundColor="#4CAF50"  Text="Editar" x:Name="btnEditar" TextColor="White" />
+
+
+            </StackLayout>
+
+
         </StackLayout>
+      
     </ContentPage.Content>
 </ContentPage>

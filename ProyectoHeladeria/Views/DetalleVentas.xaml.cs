@@ -92,7 +92,7 @@ namespace ProyectoHeladeria.Views
                 parameters.Add("Productos_idProductos", entIdProducto.Text);
                 parameters.Add("Ventas_idVentas", IdVentas.ToString());
                 parameters.Add("cantidad", lblCantidad.Text);
-                parameters.Add("precio_venta", PrecioFinal.ToString().Replace(",","."));
+                parameters.Add("precio_venta", precioTotal.ToString().Replace(",","."));
                 //parameters.Add("precio_venta", precioTotal.ToString().Replace(",","."));
 
 

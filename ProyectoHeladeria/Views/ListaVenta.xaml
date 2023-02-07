@@ -4,7 +4,9 @@
              x:Class="ProyectoHeladeria.Views.ListaVenta">
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="0">
-            <Label Margin="0,0,0,20" FontSize="Large" Text="Mis Compras" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Frame HeightRequest="30"  >
+                <Label FontSize="Medium" TextColor="#0A549B"  Text="Mis Compras"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Frame>
 
             <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
                 <Grid Padding="0">

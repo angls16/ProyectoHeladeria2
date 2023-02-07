@@ -4,8 +4,11 @@
              x:Class="ProyectoHeladeria.Views.DetalleVentas">
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="0">
-            <Label Margin="0,0,0,0" FontSize="Large" Text="Carrito de Helados" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <Label x:Name="lblNVenta" />
+            <Frame HeightRequest="30"  >
+                <Label FontSize="Medium" TextColor="#0A549B"  Text="Carrito de Helados"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Frame>
+
+            <Label x:Name="lblNVenta" IsVisible="false" />
             
             <ScrollView>
                 <Grid>

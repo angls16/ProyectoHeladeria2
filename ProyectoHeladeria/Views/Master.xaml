@@ -5,7 +5,7 @@
              Title="MenuMaster"
              
              >
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="250" />
             <RowDefinition Height="*" />
