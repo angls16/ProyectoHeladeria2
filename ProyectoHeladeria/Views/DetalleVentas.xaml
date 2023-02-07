@@ -39,7 +39,7 @@
                     </Frame>
                  
                     <StackLayout Grid.Row="1" BackgroundColor="#F8FABD" >
-                        <Button Text="Agregar Producto" x:Name="btnAgregarProducto" Clicked="btnAgregar_Clicked" />
+                        <Button CornerRadius="30" BackgroundColor="#4CAF50" Text="Agregar Producto" x:Name="btnAgregarProducto" Clicked="btnAgregar_Clicked" />
                         <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="100" Padding="0">
                             <Grid Padding="0">
                                 <Grid.ColumnDefinitions>
@@ -119,7 +119,7 @@
                 </Grid>
               
             </ScrollView>
-            <Button Text="Realizar Compra" x:Name="btnCompra" Clicked="btnCompra_Clicked"  />
+            <Button CornerRadius="30" BackgroundColor="#4CAF50"   Text="Realizar Compra" x:Name="btnCompra" Clicked="btnCompra_Clicked"  />
         </StackLayout>
 
    
